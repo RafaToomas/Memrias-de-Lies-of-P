@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lies of Pi — História & Bestiário</title>
+<link rel="stylesheet" href="css/style.css">
+<!-- If you want to use a custom gothic font, add it to assets/fonts and uncomment @font-face in css/style.css -->
+</head>
+<body>
+<div id="app" class="theme-dark">
+<header class="site-header">
+<div class="brand">
+<div class="logo">LOPi</div>
+<h1 class="title">Lies of Pi — Cronologia & Bestiário</h1>
+</div>
+<nav class="nav">
+<button class="btn" data-goto="#timeline">Timeline</button>
+<button class="btn" data-goto="#gallery">Galeria</button>
+<button id="soundToggle" class="btn small">Som: On</button>
+</nav>
+</header>
+
+
+<main>
+<!-- Hero with smoky/parallax background -->
+<section class="hero">
+<div class="hero-inner">
+<h2 class="hero-title">A Lâmina, a Mentira e a Cidade</h2>
+<p class="hero-sub">Explore a história de <em>Lies of Pi</em>: eventos principais, armas e criaturas — explicado de forma clara e bonita.</p>
+<div class="hero-cta">
+<button class="btn primary" data-goto="#timeline">Ver Timeline</button>
+<button class="btn ghost" data-goto="#gallery">Abrir Galeria</button>
+</div>
+</div>
+<div class="smoke-overlay"></div>
+</section>
+
+
+<!-- Timeline -->
+<section id="timeline" class="panel timeline-panel">
+<h3 class="panel-title">Linha do Tempo da História</h3>
+<div class="timeline" id="timelineList"></div>
+</section>
+
+
+<!-- Gallery / Bestiary -->
+<section id="gallery" class="panel gallery-panel">
+<div class="panel-head">
+<h3 class="panel-title">Galeria de Armas e Inimigos</h3>
+<div class="controls">
