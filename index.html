@@ -1,51 +1,239 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Lies of Pi — História & Bestiário</title>
-<link rel="stylesheet" href="css/style.css">
-<!-- If you want to use a custom gothic font, add it to assets/fonts and uncomment @font-face in css/style.css -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LIES OF P — Memórias & Lore</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="app" class="theme-dark">
-<header class="site-header">
-<div class="brand">
-<div class="logo">LOPi</div>
-<h1 class="title">Lies of Pi — Cronologia & Bestiário</h1>
-</div>
-<nav class="nav">
-<button class="btn" data-goto="#timeline">Timeline</button>
-<button class="btn" data-goto="#gallery">Galeria</button>
-<button id="soundToggle" class="btn small">Som: On</button>
-</nav>
-</header>
+  <!-- VIDEO BACKGROUND -->
+  <video id="bg-video" class="bg-video" playsinline muted loop></video>
 
+  <!-- top bar with small header -->
+  <header class="topbar">
+    <div class="logo">LIES OF P — Memórias</div>
+    <nav class="nav">
+      <a href="#lore">Lore</a>
+      <a href="#characters">Personagens</a>
+      <a href="#bosses">Chefes</a>
+      <a href="#weapons">Armas</a>
+      <a href="#curiosities">Curiosidades</a>
+    </nav>
+  </header>
 
-<main>
-<!-- Hero with smoky/parallax background -->
-<section class="hero">
-<div class="hero-inner">
-<h2 class="hero-title">A Lâmina, a Mentira e a Cidade</h2>
-<p class="hero-sub">Explore a história de <em>Lies of Pi</em>: eventos principais, armas e criaturas — explicado de forma clara e bonita.</p>
-<div class="hero-cta">
-<button class="btn primary" data-goto="#timeline">Ver Timeline</button>
-<button class="btn ghost" data-goto="#gallery">Abrir Galeria</button>
-</div>
-</div>
-<div class="smoke-overlay"></div>
-</section>
+  <!-- MUSIC PLAYER (canto superior esquerdo) -->
+  <div id="music-player" class="player expanded" aria-live="polite">
+    <div class="mp-inner">
+      <div class="mp-left">
+        <div class="vinyl-frame">
+          <div id="vinyl" class="vinyl">
+            <!-- disco: usa a imagem de referência que você confirmou -->
+            <img id="vinyl-img" src="imagens/vinyl_reference.png" alt="Rótulo do disco">
+          </div>
+        </div>
 
+        <div class="meta">
+          <div id="track-title" class="track-title">Feel</div>
+          <div class="progress-wrap">
+            <div class="hp-bar-bg" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+              <div id="hp-fill" class="hp-fill" style="width:0%"></div>
+            </div>
+            <div id="track-time" class="track-time">00:00 / 00:00</div>
+          </div>
+          <div class="small-label">Menu de reprodução de discos</div>
+        </div>
+      </div>
 
-<!-- Timeline -->
-<section id="timeline" class="panel timeline-panel">
-<h3 class="panel-title">Linha do Tempo da História</h3>
-<div class="timeline" id="timelineList"></div>
-</section>
+      <div class="mp-right">
+        <div class="controls">
+          <button id="prev" class="ctrl" title="Anterior">⟲</button>
+          <button id="play" class="ctrl" title="Play">►</button>
+          <button id="next" class="ctrl" title="Próxima">⟲⟲</button>
+        </div>
 
+        <div class="sliders">
+          <input id="seek" type="range" min="0" max="100" value="0" aria-label="Progresso">
+          <div class="volrow">
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="0.3" aria-label="Volume">
+          </div>
+        </div>
+      </div>
+    </div>
 
-<!-- Gallery / Bestiary -->
-<section id="gallery" class="panel gallery-panel">
-<div class="panel-head">
-<h3 class="panel-title">Galeria de Armas e Inimigos</h3>
-<div class="controls">
+    <button id="toggle-player" class="toggle-btn" aria-label="Colapsar/Expandir">➖</button>
+    <audio id="audio" preload="metadata"></audio>
+  </div>
+
+  <!-- MAIN HERO -->
+  <main>
+    <section class="hero full-screen">
+      <div class="hero-inner container">
+        <h1 class="title">LIES OF P</h1>
+        <p class="subtitle">Arquivo — Memórias, personagens, chefes e curiosidades da cidade de Krat</p>
+        <a href="#lore" class="btn-cta">Explorar a Lore</a>
+      </div>
+    </section>
+
+    <!-- LORE -->
+    <section id="lore" class="section container">
+      <h2 class="section-title">A História — Resumo</h2>
+      <div class="text-flow">
+        <p>Um autômato com a capacidade de mentir à vontade e a constituição física de um jovem desperta em uma cidade em ruínas. Krat, um centro steampunk impulsionado pela energia <strong>Ergo</strong>, é palco do colapso conhecido como a Frenesi das Marionetes. Geppetto, o criador, e os Alquimistas desempenham papéis opostos nessa tragédia: invenção e ambição; cuidado e manipulação.</p>
+
+        <h3>Ergo e a transformação</h3>
+        <p>Ergo é a fonte de poder e a metáfora do jogo — usado para animar marionetes, curar (ou corromper) humanos, e distorcer o que significa ser humano. Uma peça central da narrativa é a metamorfose do protagonista (P), cuja humanidade pode aumentar ou diminuir dependendo das escolhas do jogador.</p>
+
+        <h3>Temáticas</h3>
+        <ul>
+          <li>Identidade e memória — o quebra-cabeça de Carlo vs P.</li>
+          <li>Mentira e empatia — P mendaz que usa a mentira para proteger.</li>
+          <li>Ciência versus moralidade — Geppetto e os Alquimistas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PERSONAGENS -->
+    <section id="characters" class="section dark section-alt container">
+      <h2 class="section-title">Personagens Principais</h2>
+      <div class="grid cards-list">
+        <!-- P -->
+        <article class="card character">
+          <img src="imagens/p_52.webp" alt="P — Pinocchio">
+          <h4>P (o fantoche)</h4>
+          <p>Um autômato jovem e atraente projetado por Gepetto, possuidor da rara habilidade de mentir. Sua jornada é a busca por humanidade — evidenciada pelo crescimento do cabelo, reações físicas e animações que se desbloqueiam conforme ganha Ergo.</p>
+          <details>
+            <summary>Mais sobre P</summary>
+            <p>P pode equipar braços mecânicos, pistolas, canhões de braço, e usar a Mecânica de Combinar Armas. Suas escolhas afetam vários finais possíveis, incluindo 'Ascensão de P' e 'Real Boy'.</p>
+          </details>
+        </article>
+
+        <!-- Sophia -->
+        <article class="card character">
+          <img src="imagens/sophia_monad_lop.webp" alt="Sophia">
+          <h4>Sophia Monad</h4>
+          <p>A misteriosa 'Fada Azul' do jogo — uma Ouvinte ligada às borboletas e ao Ergo. Sophia desperta P e atua como guia. Sua forma real é prisioneira; ela usa projeções para interagir e possui papel crucial em finais e missões.</p>
+        </article>
+
+        <!-- Gemini -->
+        <article class="card character">
+          <img src="imagens/gemini_lop.webp" alt="Gemini">
+          <h4>Gemini</h4>
+          <p>O grilo autômato em uma lanterna — guia e alívio cômico, mas com fundo trágico. Ele ajuda a expor elementos da trama.</p>
+        </article>
+
+        <!-- Geppetto -->
+        <article class="card character">
+          <img src="imagens/gepetto_lop.webp" alt="Gepetto">
+          <h4>Giuseppe Geppetto</h4>
+          <p>Criador dos bonecos e peça central da tragédia. Pai de Carlo — suas ações para trazer Carlo de volta desencadeiam a Frenesi das Marionetes.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- BOSS CARDS (exemplos com dados detalhados) -->
+    <section id="bosses" class="section container">
+      <h2 class="section-title">Chefes & Encontros</h2>
+
+      <div class="grid">
+        <!-- Mestre de Cerimônias -->
+        <article class="card boss">
+          <img src="imagens/parade_master_lop.webp" alt="Mestre de Cerimônias">
+          <h3>Mestre de Cerimônias</h3>
+          <p>Chefe do Capítulo I — um gigantesco boneco de desfile que enlouqueceu. Possui uma segunda fase corrompida e ataques pesados (martelo, arremessos de partes). Um dos primeiros grandes desafios.</p>
+          <ul>
+            <li>Recompensas: Ergo do Líder de Desfile, armas específicas.</li>
+            <li>Dicas: atenção à fase vermelha, quando ele usa a própria cabeça como arma.</li>
+          </ul>
+        </article>
+
+        <!-- Vigia Sucateado -->
+        <article class="card boss">
+          <img src="imagens/scrapped_watchman_lop.webp" alt="Vigia Sucateado">
+          <h3>Vigia Sucateado</h3>
+          <p>O protetor 'Murphy', um vigilante mecânico que caiu em desgraça. Ataques elétricos, agarrões e fases que mudam o padrão tornam o combate imprevisível.</p>
+          <ul>
+            <li>Vulnerabilidade: fogo e interrupção de arma.</li>
+          </ul>
+        </article>
+
+        <!-- Fuoco (Chama do Rei) -->
+        <article class="card boss">
+          <img src="imagens/fuoco_lop.webp" alt="Fuoco">
+          <h3>Chama do Rei — Fuoco</h3>
+          <p>Chefe responsável pela forja da Venigni Works. Usa canhão de braço e punho de força. Fanatismo pelo Rei dos Bonecos e arsenal de fogo.</p>
+        </article>
+
+        <!-- Arcebispo Caído -->
+        <article class="card boss">
+          <img src="imagens/lop_archibishop_1.webp" alt="Arcebispo Caído Andreus">
+          <h3>Arcebispo Caído — Andreus</h3>
+          <p>Chefe do Capítulo IV; transformado em uma monstruosidade Carcass. Longa luta com fases e ataques de língua gigante e ácido.</p>
+        </article>
+
+        <!-- Rei dos Bonecos -->
+        <article class="card boss">
+          <img src="imagens/king_of_puppets_lop.webp" alt="Rei dos Bonecos">
+          <h3>Rei dos Bonecos</h3>
+          <p>Romeu transformado em uma enorme marionete — vilão encenado que serve de pivô para a metade inicial do enredo. Duas fases, ataques de braço extensível e, depois, batalhas corpo-a-corpo desesperadas.</p>
+        </article>
+
+        <!-- Campeão Victor -->
+        <article class="card boss">
+          <img src="imagens/champion_victor_lop.webp" alt="Campeão Victor">
+          <h3>Campeão Victor</h3>
+          <p>O homem forte ressuscitado pelos Alquimistas. Brutal e poderoso; parte do enredo dos experimentos que antecedem o confronto com os Alquimistas.</p>
+        </article>
+
+        <!-- Monstro do Pântano -->
+        <article class="card boss">
+          <img src="imagens/swamp_monster_lop.webp" alt="Monstro do Pântano">
+          <h3>Monstro Verde do Pântano</h3>
+          <p>Um devorador de marionetes que ganhou forma; na segunda fase se funde com restos do Vigia Sucateado e altera seus padrões. Altamente vulnerável a fogo na primeira fase.</p>
+        </article>
+
+        <!-- Laxasia -->
+        <article class="card boss">
+          <img src="imagens/laxalia_lop.webp" alt="Laxasia">
+          <h3>Laxasia — A Completa</h3>
+          <p>Super-soldado alquimista, guarda-costas de Simon Manus. Movimentos elétricos, armadura pesada e transição para fase 2 brutal ao quebrar sua arma.</p>
+        </article>
+
+        <!-- Simon Manus -->
+        <article class="card boss">
+          <img src="imagens/simon_manus.webp" alt="Simon Manus">
+          <h3>Simon Manus</h3>
+          <p>Líder dos Alquimistas — busca ascender à divindade com Ergo. Telepatia, transformação monstruosa e papel central na conclusão da história.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Weapons -->
+    <section id="weapons" class="section container">
+      <h2 class="section-title">Armas & Equipamentos</h2>
+      <div class="card">
+        <h4>Sistema de Combinação</h4>
+        <p>Armas em Lies of P são frequentemente combináveis: handles / blades / partes que alteram comportamento. Há opções elementais e variantes de chefe. As armas também têm durabilidade — quebrar armas inimigas é uma tática importante.</p>
+      </div>
+    </section>
+
+    <!-- curiosities -->
+    <section id="curiosities" class="section dark section-alt container">
+      <h2 class="section-title">Curiosidades</h2>
+      <ul class="curio-list">
+        <li>O jogador pode ouvir discos no Hotel Krat; ouvir músicas dá bônus de Humanidade.</li>
+        <li>A habilidade de mentir de P é usada para confortar NPCs e desbloquear finais.</li>
+        <li>O Órgão-P é um artefato que permite a P ganhar traços humanos ao longo do jogo.</li>
+      </ul>
+    </section>
+
+    <footer class="site-footer container">
+      <p>Projeto pessoal — arquivos e pesquisas baseadas em coletâneas públicas (wikis, guias e reviews). Use apenas para referência.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
